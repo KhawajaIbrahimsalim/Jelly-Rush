@@ -2,18 +2,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Joystick joystick;
     public float speed = 1f;
     public Rigidbody rb;
     public Vector3 movement;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        //movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+
+        movement = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
     }
 
     void FixedUpdate()
