@@ -41,7 +41,7 @@ public class TailMechanic : MonoBehaviour
             // Rotation
             if (Diff.normalized != Vector3.zero)
             {
-                Quaternion rotation = Quaternion.LookRotation(Diff.normalized * 2);
+                Quaternion rotation = Quaternion.LookRotation(Diff.normalized);
                 rb.MoveRotation(rotation);
             }
         }

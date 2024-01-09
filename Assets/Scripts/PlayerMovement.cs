@@ -15,12 +15,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
-
-        movement = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
     }
 
     void FixedUpdate()
     {
+        movement = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
+
         moveCharacter(movement);
 
         Rotate();
